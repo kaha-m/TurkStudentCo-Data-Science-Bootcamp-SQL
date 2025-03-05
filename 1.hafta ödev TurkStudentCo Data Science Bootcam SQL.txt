@@ -1,0 +1,54 @@
+a. Belirli Kolonları Seçme
+Çalışanların sadece FirstName, LastName ve Salary bilgilerini getiren bir SQL sorgusu yazınız.
+
+ SELECT firstname, lastname, salary
+ FROM employees 
+  
+( kolon adları select olarak yazdığımız bloğun yanında yer almakta ve bu kolonları employess üzerinden getirmekte.)
+
+
+
+b. DISTINCT Komutu ile Tekrarları Önleme
+Çalışanların çalıştıkları departmanları benzersiz olarak listeleyen bir SQL sorgusu yazınız.
+
+SELECT DISTINCT departmentid
+From employees
+
+(çalışanların departmanlarında kaç kişi olduğunu listeleyen bir sprgu yazmış olduk.)
+
+
+c. Belirli Bir Departmana Ait Çalışanları Listeleme
+Sadece IT departmanında çalışanların bilgilerini getiren bir SQL sorgusu yazınız.
+
+SELECT * FROM employees  
+WHERE departmentid = 1;
+
+(Select * olarak yazmadan bu kodu yapamadım. Yanlızca bu şekilde bir listeleme yapabildim.)
+
+d. Maaşa Göre Sıralama
+Çalışanları maaşlarına göre büyükten küçüğe sıralayan bir SQL sorgusu yazınız.
+
+
+SELECT firstname, lastname , salary
+FROM employees 
+ORDER BY salary DESC
+
+(bu sorguda çalışanların maaşları azalan bir sırayla verilmiş olup çalışanların sadce tam isimleri yer almaktdaır. )
+
+
+
+e. Kolonları Birleştirme (Concatenation)
+Çalışanların FirstName ve LastName alanlarını birleştirerek, tam adlarını içeren yeni bir kolon
+oluşturan bir SQL sorgusu yazınız
+
+
+SELECT firstname || ' ' || lastname
+FROM employees 
+
+( isim ve soyisimleri birleştiren yeni bir kolon belirlemiş olduk. )
+
+
+SELECT firstname || ' ' || lastname as full_name 
+FROM employees   
+
+( bu şekilde yazarsak kolonun adını değiştirme şansımız olur )
